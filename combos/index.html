@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Title of the document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <p v-for="index in 10">
+            {{ index }}
+        </p> -->
+
+        <!-- <select>
+            <option value="0">Zöldség</option>
+            <option value="1">Gyümölcs</option>
+        </select> -->
+
+        <p>
+            <select v-model="selectedCategoryId">
+                <option v-for="category in getCategories()" :value="category.id">
+                    {{ category.text }}
+                </option>
+            </select>
+
+            <select>
+                <option v-for="item in getItems(selectedCategoryId)" :value="item.id">
+                    {{ item.text }}
+                </option>
+            </select>
+        </p>
+    </div>
+
+    <script src="scripts/vue.js"></script>
+    <script src="scripts/site.js"></script>
+</body>
+
+</html>

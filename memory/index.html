@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Memory Game</title>
+  <link rel="stylesheet" type="text/css" href="styles/site.css">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      Memory Game
+    </header>
+
+    <div class="card-board">
+      <div class="card-row" v-for="(cardRow, rowIndex) in cards">
+        <div class="card-cell" v-for="(card, colIndex) in cardRow">
+          <div :class="['card', {'card-up': card.isUp == true}, {'card-removed': card.isUp == null}]"
+            @click="onCardClick(rowIndex, colIndex)">
+            <div class="card-image"
+              :style="{'background-image': card.isUp == true ? getFigureCssUrl(card.figure) : null}">
+              {{ rowIndex + "," + colIndex }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Lépések száma: {{ stepCount }}
+    </footer>
+  </div>
+
+  <script src="scripts/vue.js"></script>
+  <script src="scripts/site.js"></script>
+</body>
+
+</html>
