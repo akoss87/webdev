@@ -1,0 +1,32 @@
+/* sorok háttérszíne */
+#table-container > table tr {
+    background-color: white;
+    color: black;
+}
+
+#table-container > table > thead > tr {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+#table-container > table > tbody > tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+/* szöveg igazítások */
+#table-container > table th,
+#table-container > table td {
+   padding: 4px;
+   text-align: center;
+}
+
+#table-container > table th:nth-child(1),
+#table-container > table td:nth-child(1) {
+    text-align: right;
+}
+
+#table-container > table th:nth-child(2),
+#table-container > table td:nth-child(2) {
+    text-align: left;
+}

@@ -3,11 +3,13 @@
 
 <head>
   <title>Score Table</title>
+  <!-- <link rel="stylesheet" type="text/css" href="reset.css" /> -->
+  <link rel="stylesheet" type="text/css" href="app.css" />
 </head>
 
 <body>
   <div>
-      <textarea id="inputText" cols="120" rows="30" spellcheck="false">
+    <textarea id="inputText" cols="120" rows="30" spellcheck="false">
 Club Brugge-Borussia Dortmund 0:1
 Monaco-Atletico Madrid 1:2
 Atletico Madrid-Club Brugge 3:1
@@ -23,8 +25,79 @@ Monaco-Borussia Dortmund 0:2
       </textarea>
   </div>
   <div>
-      <button onclick="loadTable()">Tabella készítése</button>
+    <button onclick="loadTable()">Tabella készítése</button>
   </div>
+
+  <div id="table-container">
+    <table>     
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Team Name</th>
+          <th>P</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>F</th>
+          <th>A</th>
+          <th>GD</th>
+          <th>Pts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Borussia Dortmund</td>
+          <td>6</td>
+          <td>4</td>
+          <td>1</td>
+          <td>1</td>
+          <td>10</td>
+          <td>2</td>
+          <td>8</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Borussia Dortmund</td>
+          <td>6</td>
+          <td>4</td>
+          <td>1</td>
+          <td>1</td>
+          <td>10</td>
+          <td>2</td>
+          <td>8</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Borussia Dortmund</td>
+          <td>6</td>
+          <td>4</td>
+          <td>1</td>
+          <td>1</td>
+          <td>10</td>
+          <td>2</td>
+          <td>8</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Borussia Dortmund</td>
+          <td>6</td>
+          <td>4</td>
+          <td>1</td>
+          <td>1</td>
+          <td>10</td>
+          <td>2</td>
+          <td>8</td>
+          <td>13</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="calc.js"></script>
   <script src="app.js"></script>
 </body>
 
