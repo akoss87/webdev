@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        div#box {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        //var v = 0.5;
+
+        // szögsebesség
+        var omega = 0.001;
+
+        // ablak méret
+        var w = document.documentElement.scrollWidth;
+        var h = document.documentElement.scrollHeight;
+
+        // ablak középpont
+        var centerX = w / 2;
+        var centerY = h / 2;
+
+        var box = document.getElementById('box');
+
+        // négyzet méret
+        var boxW = box.offsetWidth;
+        var boxH = box.offsetHeight;
+
+        var t0;
+        function step(timestamp) {
+            if (!t0)
+                t0 = timestamp;
+
+            var t = timestamp - t0;
+
+            // var s = v * t;
+            // box.style.left = s + "px";
+
+            var rad = omega * t;
+
+            var boxCenterX = centerX + 300 * Math.cos(rad);
+            var boxCenterY = centerY - 100 * Math.sin(rad);
+
+            box.style.left = (boxCenterX - boxW / 2)  + "px";
+            box.style.top = (boxCenterY - boxH / 2) + "px";
+
+            requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+    </script>
+</body>
+
+</html>
